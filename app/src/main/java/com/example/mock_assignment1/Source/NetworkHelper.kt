@@ -13,10 +13,27 @@ object NetworkHelper {
     {
         Log.d("ALI","Network")
         return Retrofit.Builder()
-            .baseUrl("https://digi-api.airtel.in/")
+            .baseUrl("https://digi-api.airtel.in/compassLocation/rest/address/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build())
             .build()
     }
-    fun getApiServices():ApiServices= getNetworkInstance().create()
+    fun getApiServices():ApiServices= getNetworkInstance().create(ApiServices::class.java)
 }
+//class NetworkHelper {
+//    companion object {
+//        private const val BASE_URL = "https://digi-api.airtel.in/compassLocation/rest/address/"
+//        fun getRetrofitInstance(): Retrofit {
+//            return Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(
+//                    OkHttpClient.Builder().addInterceptor(
+//                        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+//                    ).build()
+//                )
+//                .build()
+//        }
+//    }
+//    fun getApiServices():ApiServices= getRetrofitInstance().create()
+//}

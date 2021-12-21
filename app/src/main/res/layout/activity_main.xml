@@ -15,10 +15,5 @@
         app:floatingSearch_showSearchKey="false"
         app:floatingSearch_leftActionMode="showHamburger"
         app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </LinearLayout>
